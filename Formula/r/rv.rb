@@ -28,6 +28,7 @@ class Rv < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/rv")
+    generate_completions_from_executable(bin/"rv", "shell", "completions")
   end
 
   test do
